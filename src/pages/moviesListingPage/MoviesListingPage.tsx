@@ -1,7 +1,8 @@
 import React from 'react'
+import { MoviesListing } from '../../components/moviesListing/MoviesListing'
 
-export const MoviesListing = () => {
+export const MoviesListingPage = () => {
   return (
-    <div>MoviesListing</div>
+    <MoviesListing/>
   )
 }

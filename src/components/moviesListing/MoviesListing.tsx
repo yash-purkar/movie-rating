@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import { useAppSelector } from "../../redux/hooks";
 
 export const MoviesListing = () => {
-  return (
-    <div>MoviesListing</div>
-  )
-}
+  const {movies} = useAppSelector(state => state.movies);
+
+  return <div>MoviesListing</div>;
+};

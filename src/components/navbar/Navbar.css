@@ -1,15 +1,15 @@
 .navbar {
   width: calc(100% - 2rem);
-  background-color: #bae6fd;
+  background-color: #333;
   padding: 1rem;
+  color: #fff;
 }
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.movie_search_input {
-}
+
 .movie_search_input_sm,
 .movie_search_input_lg {
   border: none;
