@@ -22,3 +22,10 @@ import { RootState, AppDispatch } from "./store";
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+
+
+For search filter-
+Created the another slice for search,
+bcz we the search bar is in navbar and we want the search value in movieListing so we used the search query state there in movieListing, and filtered there.
+Redux will not re-render all the app, it will only re-render that components which are using that searchquery state, And the movieListing will be re-rendered only, bcz we are only using there.
