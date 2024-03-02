@@ -18,7 +18,7 @@ export const Navbar = () => {
       <input onChange={handleChange} type="search" name="" id="" className='movie_search_input_lg'/>
       <ul className='pages_links'>
         <li>Movies</li>
-        <li>Watched</li>
+        <li>Watchlist</li>
         <li>Starred</li>
       </ul>
       </div>

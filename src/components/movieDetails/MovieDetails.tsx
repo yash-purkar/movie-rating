@@ -33,7 +33,7 @@ export const MovieDetails = () => {
         <p className="my-05">Director: {movie.director}</p>
         <p>Writer: {movie.writer}</p>
         <p className="my-05">Cast: {movie.cast.toString().split(",").join(", ")}</p>
-        <div className="movie_actions  my-05">
+        <div className="movie_details_actions my-05">
         <button>Star</button>
         <button>Add to watchlist</button>
       </div>
