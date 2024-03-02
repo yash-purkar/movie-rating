@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { MoviesListingPage } from "./pages/moviesListingPage/MoviesListingPage";
 import "./utils.css";
 import { MovieDetailsPage } from "./pages/MovieDetailsPage/MovieDetailsPage";
+import { StarredMovies } from "./components/starredMovies/StarredMovies";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MoviesListingPage />} />
         <Route path="/search/:id" element={<MovieDetailsPage/>} />
+        <Route path="/starred" element={<StarredMovies/>}/>
       </Routes>
     </div>
   );

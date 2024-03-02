@@ -8,6 +8,7 @@
 .movie_details{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -21,7 +22,7 @@
   color: #fff;
   letter-spacing: 1px;
   padding: 0.3rem 0.5rem;
-  margin-right: 0.5rem;
+  margin: 0.5rem 0.5rem 0rem 0rem;
 }
 
 .movie_details_actions button:hover {
@@ -42,6 +43,7 @@
 
   .movie_details_go_to_home {
     text-align: center;
+    margin-top: 2rem;
   }
 
   .movie_details_go_to_home button:hover {
@@ -52,6 +54,7 @@
   @media (min-width:720px) {
     .movie_details{
         flex-direction: row;
+        align-items: unset;
     }
     .movie_detail_image{
         width: 30%;

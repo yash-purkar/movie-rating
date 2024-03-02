@@ -2,6 +2,8 @@ import React from "react";
 import "./MovieCard.css";
 import { Movie } from "../../types";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { addToStar } from "../../redux/features/starredSlice";
 
 interface MovieCardProps {
   movie: Movie;
@@ -9,6 +11,10 @@ interface MovieCardProps {
 
 export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const {starredMovies} = useAppSelector(state => state.starred);
+
+  const isStarred = starredMovies.some((starredMovie) => starredMovie.id === movie.id)
 
   const handleMovieClick = () => {
     navigate(`/search/${movie.id}`);
@@ -17,6 +23,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const handleStarClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     // Preventing the event bubbling concept, bcz if we were clicking on star button it was redirecting to movie details page.
     event.stopPropagation();
+
+    dispatch(addToStar(movie));
   };
 
   const handleWatchlistClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,7 +40,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         {movie.summary.split("").slice(0, 90)}...
       </p>
       <div className="movie_actions  my-05">
-        <button onClick={handleStarClick}>Star</button>
+        <button disabled={isStarred} onClick={handleStarClick} className={`${isStarred && 'btn_disabled'}`}>Star</button>
         <button onClick={handleWatchlistClick}>Add to watchlist</button>
       </div>
     </div>

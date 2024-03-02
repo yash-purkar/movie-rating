@@ -1,7 +1,12 @@
 .movies_container {
-  margin: auto;
+  margin: 2rem auto;
 }
-
+.all_movies_heading{
+  margin: 2rem 0;
+  text-align: center;
+  color: #808080;
+  letter-spacing: 1px;
+}
 .movies {
   display: flex;
   justify-content: center;

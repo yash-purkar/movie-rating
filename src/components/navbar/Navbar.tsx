@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { useAppDispatch } from '../../redux/hooks'
 import { setSearchQuery } from '../../redux/features/searchSlice';
+import { NavLink } from 'react-router-dom';
 export const Navbar = () => {
   const dispatch = useAppDispatch();
 
@@ -17,9 +18,15 @@ export const Navbar = () => {
       <h1>IMDB</h1>
       <input onChange={handleChange} type="search" name="" id="" className='movie_search_input_lg'/>
       <ul className='pages_links'>
-        <li>Movies</li>
-        <li>Watchlist</li>
-        <li>Starred</li>
+        <li>
+          <NavLink to={'/'} className='navlink_item'>Movies</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/watchlist'} className='navlink_item'>Watchlist</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/starred'} className='navlink_item'>Starred</NavLink>
+        </li>
       </ul>
       </div>
       <input onChange={handleChange} type="search" name="" id="" className='movie_search_input_sm'/>

@@ -18,6 +18,7 @@ export const MoviesListing = () => {
 
   return (
     <div className="movies_container">
+      <h1 className="all_movies_heading">{filteredMovies.length === 0 ? 'No movies found' : 'All Movies'}</h1>
       <div className="movies">
         {filteredMovies?.map(
           (movie: Movie): React.ReactElement => (

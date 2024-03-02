@@ -30,7 +30,11 @@
   gap: 0.5rem;
   letter-spacing: 1px;
 }
-
+.navlink_item {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 @media (min-width: 720px) {
   .movie_search_input_sm {
