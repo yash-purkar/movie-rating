@@ -5,7 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import { MoviesListingPage } from "./pages/moviesListingPage/MoviesListingPage";
 import "./utils.css";
 import { MovieDetailsPage } from "./pages/MovieDetailsPage/MovieDetailsPage";
-import { StarredMovies } from "./components/starredMovies/StarredMovies";
+import { WatchlistMoviesPage } from "./pages/watchlistMoviesPage/WatchlistMoviesPage";
+import { StarredMoviesPage } from "./pages/starredMoviesPage/StarredMoviesPage";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MoviesListingPage />} />
         <Route path="/search/:id" element={<MovieDetailsPage/>} />
-        <Route path="/starred" element={<StarredMovies/>}/>
+        <Route path="/starred" element={<StarredMoviesPage/>}/>
+        <Route path="/watchlist" element={<WatchlistMoviesPage/>}/>
       </Routes>
     </div>
   );
