@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 import { MoviesListingPage } from "./pages/moviesListingPage/MoviesListingPage";
+import './utils.css'
 
 function App() {
   return (

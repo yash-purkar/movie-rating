@@ -1,0 +1,17 @@
+.movies_container {
+  margin: auto;
+}
+
+.movies {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  flex-wrap: wrap;
+}
+
+@media (min-width:1024px) {
+    .movies_container {
+        width: 50rem;
+    }
+}
