@@ -21,30 +21,61 @@ export const Navbar = () => {
     dispatch(setFilter({ filterName: "searchQuery", value }));
   };
 
+  const goToHome = () => {
+    navigate("/");
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
-        <h1>IMDB</h1>
+        <h1 onClick={goToHome} style={{ cursor: "pointer" }}>
+          IMDB
+        </h1>
         <input
           onChange={handleChange}
           type="search"
           name=""
           id=""
           className="movie_search_input_lg"
+          placeholder="Searh the movie by name"
         />
         <ul className="pages_links">
           <li>
-            <NavLink to={"/"} className="navlink_item">
+            <NavLink
+              to={"/"}
+              className="navlink_item"
+              style={({ isActive }) => {
+                return {
+                  borderBottom: isActive ? "1px solid #fff" : "",
+                };
+              }}
+            >
               Movies
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/watchlist"} className="navlink_item">
+            <NavLink
+              to={"/watchlist"}
+              className="navlink_item"
+              style={({ isActive }) => {
+                return {
+                  borderBottom: isActive ? "1px solid #fff" : "",
+                };
+              }}
+            >
               Watchlist
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/starred"} className="navlink_item">
+            <NavLink
+              to={"/starred"}
+              className="navlink_item"
+              style={({ isActive }) => {
+                return {
+                  borderBottom: isActive ? "1px solid #fff" : "",
+                };
+              }}
+            >
               Starred
             </NavLink>
           </li>
@@ -56,6 +87,7 @@ export const Navbar = () => {
         name=""
         id=""
         className="movie_search_input_sm"
+        placeholder="Searh the movie by name"
       />
     </nav>
   );
