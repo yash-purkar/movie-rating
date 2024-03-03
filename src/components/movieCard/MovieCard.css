@@ -6,6 +6,12 @@
   justify-content: space-between;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  transition: ease-in 0.1s;
+  filter: blur(1.5px);
+}
+.movie_card:hover{
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
 }
 
 .movie_image {
