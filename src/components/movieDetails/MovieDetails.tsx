@@ -1,16 +1,34 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { Movie } from "../../types";
 import "./MovieDetails.css";
+import {
+  addToStar,
+  removeFromStarred,
+} from "../../redux/features/starredSlice";
+import {
+  addToWatchlist,
+  removeFromWatchlist,
+} from "../../redux/features/watchlistSlice";
 export const MovieDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const { movies } = useAppSelector((state) => state.movies);
+  const { starredMovies } = useAppSelector((state) => state.starred);
+  const { watchlistMovies } = useAppSelector((state) => state.watchlist);
+  const dispatch = useAppDispatch();
 
   const movie: Movie | undefined = movies.find(
     (movie) => movie.id === Number(id)
+  );
+
+  const isStarredMovie = starredMovies.some(
+    (starredMovie) => starredMovie.id === movie?.id
+  );
+  const isWatchlisted = watchlistMovies.some(
+    (watchlistMovie) => watchlistMovie.id === movie?.id
   );
 
   if (!movie) {
@@ -19,6 +37,20 @@ export const MovieDetails = () => {
 
   const goToHome = () => {
     navigate("/");
+  };
+
+  const handleAddStarClick = () => {
+    dispatch(addToStar(movie));
+  };
+  const handleUnstar = () => {
+    dispatch(removeFromStarred(movie.id));
+  };
+
+  const handleAddWatchlist = () => {
+    dispatch(addToWatchlist(movie));
+  };
+  const handleRemoveWatchlist = () => {
+    dispatch(removeFromWatchlist(movie.id));
   };
 
   return (
@@ -50,8 +82,18 @@ export const MovieDetails = () => {
               Cast: {movie.cast.toString().split(",").join(", ")}
             </p>
             <div className="movie_details_actions my-05">
-              <button>Star</button>
-              <button>Add to watchlist</button>
+              {isStarredMovie ? (
+                <button className="button_primary" onClick={handleUnstar}>Unstar</button>
+              ) : (
+                <button className="button_primary" onClick={handleAddStarClick}>Star</button>
+              )}
+              {isWatchlisted ? (
+                <button className="button_primary" onClick={handleRemoveWatchlist}>
+                  Remove from watchlist
+                </button>
+              ) : (
+                <button className="button_primary" onClick={handleAddWatchlist}>Add to watchlist</button>
+              )}
             </div>
           </div>
         </div>

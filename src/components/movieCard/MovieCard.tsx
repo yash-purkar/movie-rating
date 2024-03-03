@@ -46,8 +46,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         {movie.summary.split("").slice(0, 90)}...
       </p>
       <div className="movie_actions  my-05">
-        <button disabled={isStarred} onClick={handleStarClick} className={`${isStarred && 'btn_disabled'}`}>Star</button>
-        <button disabled={isWatchlisted}  onClick={handleWatchlistClick} className={`${isWatchlisted && 'btn_disabled'}`}>Add to watchlist</button>
+        <button disabled={isStarred} onClick={handleStarClick} className={`button_primary ${isStarred && 'btn_disabled'}`}>Star</button>
+        <button disabled={isWatchlisted}  onClick={handleWatchlistClick} className={`button_primary ${isWatchlisted && 'btn_disabled'}`}>Add to watchlist</button>
       </div>
     </div>
   );

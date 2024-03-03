@@ -29,3 +29,6 @@ For search filter-
 Created the another slice for search,
 bcz we the search bar is in navbar and we want the search value in movieListing so we used the search query state there in movieListing, and filtered there.
 Redux will not re-render all the app, it will only re-render that components which are using that searchquery state, And the movieListing will be re-rendered only, bcz we are only using there.
+Update - 
+Update searcSlice to filtersSlice to handle all dropdown filters as well.
+For filter persistent on tab change.
