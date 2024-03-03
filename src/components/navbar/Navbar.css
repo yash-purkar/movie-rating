@@ -1,12 +1,14 @@
 .navbar {
-  width: calc(100% - 2rem);
+  width: auto;
   background-color: #333;
   padding: 1rem;
   color: #fff;
 }
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -17,6 +19,7 @@
   padding: 0.3rem;
   width: 50%;
   border-radius: 0.5rem;
+  letter-spacing: 1px;
 }
 .movie_search_input_sm {
   width: 100%;
@@ -28,7 +31,10 @@
 .pages_links {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
   letter-spacing: 1px;
+  margin: 0.8rem 0;
 }
 .navlink_item {
   color: #fff;
@@ -37,10 +43,16 @@
 }
 
 @media (min-width: 720px) {
+  .container {
+    flex-direction: row;
+  }
   .movie_search_input_sm {
     display: none;
   }
   .movie_search_input_lg {
     display: block;
+  }
+  .pages_links {
+    margin: 0;
   }
 }

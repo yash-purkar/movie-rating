@@ -17,6 +17,9 @@
 
 @media (min-width:1024px) {
     .movies_container {
-        width: 50rem;
+        width: 80%;
+    }
+    .movies {
+      gap: 4rem;
     }
 }
