@@ -29,7 +29,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <h1 onClick={goToHome} style={{ cursor: "pointer" }}>
-          IMDB
+        InfoMDb
         </h1>
         <input
           onChange={handleChange}
