@@ -1,0 +1,46 @@
+.navbar {
+  width: calc(100% - 2rem);
+  background-color: #333;
+  padding: 1rem;
+  color: #fff;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie_search_input_sm,
+.movie_search_input_lg {
+  border: none;
+  padding: 0.3rem;
+  padding: 0.3rem;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+.movie_search_input_sm {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.movie_search_input_lg {
+  display: none;
+}
+.pages_links {
+  display: flex;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+}
+.navlink_item {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 720px) {
+  .movie_search_input_sm {
+    display: none;
+  }
+  .movie_search_input_lg {
+    display: block;
+  }
+}
